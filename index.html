@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linktree - Protected</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        #passwordPrompt {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+        #passwordInput {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #loginButton {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #loginButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="passwordPrompt">
+    <h2>Enter Password</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <button id="loginButton" onclick="checkPassword()">Login</button>
+</div>
+
+<div id="content" class="hidden">
+    <h1>Welcome to My Linktree</h1>
+    <ul>
+        <li><a href="https://linktr.ee/1extensiveb?utm_source=linktree_profile_share&ltsid=b4e4cbef-451a-4d80-94e3-d71fc4df0d32" target="_blank">My Linktree</a></li>
+    </ul>
+</div>
+
+<script>
+    const correctPassword = "taksifi2024"; // Ganti dengan password yang kamu inginkan
+
+    function checkPassword() {
+        const inputPassword = document.getElementById('passwordInput').value;
+
+        if (inputPassword === correctPassword) {
+            document.getElementById('passwordPrompt').classList.add('hidden');
+            document.getElementById('content').classList.remove('hidden');
+        } else {
+            alert('Incorrect password, try again!');
+        }
+    }
+</script>
+
+</body>
+</html>
