@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree - Protected</title>
+    <title>Galeri 1 Extensive</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,37 +25,9 @@
             overflow: hidden;
         }
 
-        /* Loading Screen */
-        #loadingScreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        #loadingScreen .spinner {
-            border: 16px solid #f3f3f3; /* Light gray */
-            border-top: 16px solid #00A9E0; /* Blue color */
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         /* Password Prompt */
         #passwordPrompt {
-            background-color: #00A9E0; /* Biru terang */
+            background-color: #2C3E50; /* Biru gelap dan lebih lembut */
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -67,29 +39,29 @@
         h2 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: #fff;
+            color: #ECF0F1; /* Warna terang lembut */
         }
 
         input[type="password"] {
             width: 100%;
             padding: 15px;
             margin: 10px 0;
-            border: 2px solid #333;
+            border: 2px solid #34495E;
             border-radius: 5px;
             font-size: 18px;
-            background: #333;
+            background: #34495E;
             color: white;
             transition: border-color 0.3s ease;
         }
 
         input[type="password"]:focus {
-            border-color: #00A9E0; /* Biru terang */
+            border-color: #2980B9; /* Biru terang lembut */
             outline: none;
         }
 
         button {
             padding: 12px 20px;
-            background-color: #00A9E0; /* Biru terang */
+            background-color: #2980B9; /* Biru terang */
             border: none;
             color: white;
             font-size: 20px;
@@ -101,13 +73,7 @@
         }
 
         button:hover {
-            background-color: #007B8A; /* Biru lebih gelap */
-        }
-
-        .loading {
-            display: none;
-            color: #00A9E0;
-            margin-top: 20px;
+            background-color: #1ABC9C; /* Biru lebih gelap */
         }
 
         #content {
@@ -122,7 +88,7 @@
             font-size: 20px;
             padding: 10px 20px;
             border-radius: 5px;
-            background-color: #333;
+            background-color: #34495E;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             display: inline-block;
             margin-top: 20px;
@@ -130,7 +96,7 @@
         }
 
         #content a:hover {
-            background-color: #00A9E0; /* Biru terang */
+            background-color: #2980B9; /* Biru terang */
         }
 
         @keyframes fadeIn {
@@ -142,7 +108,7 @@
             margin-bottom: 20px;
             width: 80px;
             height: 80px;
-            background-color: #00A9E0; /* Biru terang */
+            background-color: #2980B9; /* Biru terang */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -163,11 +129,6 @@
 </head>
 <body>
 
-<!-- Loading Screen -->
-<div id="loadingScreen">
-    <div class="spinner"></div>
-</div>
-
 <!-- Logo -->
 <div class="logo">
     <img src="https://t86.pixhost.to/thumbs/470/562740380_logo-awal-taksipi.png" alt="Logo">
@@ -177,7 +138,6 @@
     <h2>Galeri Kelas 1 Extensive B</h2>
     <input type="password" id="passwordInput" placeholder="Ketik passwordnya" />
     <button id="loginButton" onclick="checkPassword()">Login</button>
-    <div class="loading" id="loadingMessage">Logging in...</div>
 </div>
 
 <!-- Tombol Instagram akan selalu ada di bawah -->
@@ -195,18 +155,13 @@
 
     function checkPassword() {
         const inputPassword = document.getElementById('passwordInput').value;
-        document.getElementById('loadingMessage').style.display = 'block'; // Tampilkan loading
 
-        setTimeout(function() {
-            if (inputPassword === correctPassword) {
-                document.getElementById('passwordPrompt').classList.add('hidden');
-                document.getElementById('content').classList.remove('hidden');
-                document.getElementById('loadingScreen').style.display = 'none'; // Sembunyikan loading screen
-            } else {
-                alert('Incorrect password, please try again!');
-            }
-            document.getElementById('loadingMessage').style.display = 'none'; // Sembunyikan loading
-        }, 1500); // Delay untuk animasi loading
+        if (inputPassword === correctPassword) {
+            document.getElementById('passwordPrompt').classList.add('hidden');
+            document.getElementById('content').classList.remove('hidden');
+        } else {
+            alert('Incorrect password, please try again!');
+        }
     }
 </script>
 
