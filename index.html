@@ -5,59 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linktree - Protected</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            text-align: center;
-            padding: 50px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a18cd1 10%, #fbc2eb 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
         .hidden {
             display: none;
         }
+
         #passwordPrompt {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin: 0 auto;
-        }
-        #passwordInput {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             width: 100%;
-            padding: 10px;
-            font-size: 16px;
+            max-width: 400px;
+            animation: fadeIn 1s ease-out;
         }
-        #loginButton {
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        input[type="password"]:focus {
+            border-color: #a18cd1;
+            outline: none;
+        }
+
+        button {
             padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #a18cd1;
             border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 15px;
         }
-        #loginButton:hover {
-            background-color: #45a049;
+
+        button:hover {
+            background-color: #6c6ec9;
+        }
+
+        #content {
+            font-size: 18px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        #content a {
+            color: #4A4A4A;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #content a:hover {
+            background-color: #a18cd1;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
 <div id="passwordPrompt">
-    <h2>Enter Password</h2>
-    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <h2>Enter Password to Access My Linktree</h2>
+    <input type="password" id="passwordInput" placeholder="Enter your password" />
     <button id="loginButton" onclick="checkPassword()">Login</button>
 </div>
 
 <div id="content" class="hidden">
     <h1>Welcome to My Linktree</h1>
-    <ul>
-        <li><a href="https://linktr.ee/1extensiveb?utm_source=linktree_profile_share&ltsid=b4e4cbef-451a-4d80-94e3-d71fc4df0d32" target="_blank">My Linktree</a></li>
-    </ul>
+    <a href="https://linktr.ee/1extensiveb?utm_source=linktree_profile_share&ltsid=b4e4cbef-451a-4d80-94e3-d71fc4df0d32" target="_blank">Go to My Linktree</a>
 </div>
 
 <script>
-    const correctPassword = "taksifi2024"; // Ganti dengan password yang kamu inginkan
+    const correctPassword = "taksifi2024"; // Ganti dengan password yang sudah kamu tentukan
 
     function checkPassword() {
         const inputPassword = document.getElementById('passwordInput').value;
@@ -66,7 +129,7 @@
             document.getElementById('passwordPrompt').classList.add('hidden');
             document.getElementById('content').classList.remove('hidden');
         } else {
-            alert('Incorrect password, try again!');
+            alert('Incorrect password, please try again!');
         }
     }
 </script>
